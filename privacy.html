@@ -8,13 +8,13 @@
 </head>
 <body>
 <h1>Privacy policy</h1>
-<p><em>Last updated: 1 November 2026 (revised to cover Tasks, calendar changes and Gmail)</em></p>
+<p><em>Last updated: 1 November 2026 (revised to cover Tasks, calendar changes, Gmail and Drive)</em></p>
 
 <p>Personal Assistant is a private tool used only by its owner. This page describes what it
 does with Google user data.</p>
 
 <h2>What it accesses</h2>
-<p>Three Google permissions, granted by the owner:</p>
+<p>Four Google permissions, granted by the owner:</p>
 <ul>
 <li><strong>Calendar events</strong> (<code>calendar.events</code>): reads the owner's events, and
 can create, change or delete an event <em>only</em> after the owner approves that one specific
@@ -25,6 +25,11 @@ step with the owner's to-do items. It does not change any other task list.</li>
 saves drafts, and archives, labels or moves email to Trash <em>only</em> after the owner approves
 that specific batch. It <strong>never sends email</strong>: drafts are left for the owner to
 review and send themselves. It cannot permanently delete email.</li>
+<li><strong>Google Drive</strong> (<code>drive</code>): searches and reads the owner's files when
+asked, and creates new Google Docs for the owner. It moves, renames or shares one of the owner's
+own files, or moves one to Trash, <em>only</em> after the owner approves that specific change
+(each file to be trashed and each person to be shared with is approved separately). It never
+changes files owned by other people, and it cannot permanently delete files.</li>
 </ul>
 <p>It requests no other Google data.</p>
 
@@ -32,8 +37,8 @@ review and send themselves. It cannot permanently delete email.</li>
 <ul>
 <li>The daily briefing is assembled on the owner's laptop from their calendar and to-do items, and
 delivered to their private Telegram chat.</li>
-<li>When the owner asks about their schedule, tasks or email, the relevant details (for example an
-event's time and title, or an email's sender, subject and text) are sent to Anthropic's Claude
+<li>When the owner asks about their schedule, tasks, email or files, the relevant details (for example an
+event's time and title, or an email's sender, subject and text, or a document's text) are sent to Anthropic's Claude
 API, the language model the assistant uses, to compose the answer. The answer goes to the same
 private chat.</li>
 <li>Google user data is used only to provide these features to the owner. It is not used to train
@@ -43,7 +48,7 @@ any AI model by this app, not used for advertising, and not sold.</li>
 <h2>Where it is stored</h2>
 <p>The Google authorisation token, the to-do items, and a short history of the owner's
 conversation with the assistant are stored only on the owner's laptop, in a private directory.
-Email and calendar content is fetched when needed rather than copied into storage, although the
+Email, calendar and file content is fetched when needed rather than copied into storage, although the
 assistant's own replies, which may mention it, are kept in that local conversation history. Nothing
 is uploaded to any server operated for this app.</p>
 
@@ -52,7 +57,8 @@ is uploaded to any server operated for this app.</p>
 used only to deliver the owner's own information back to the owner. The assistant never sends
 email. The only way it can cause anyone else to be contacted is through Google Calendar: if the
 owner approves a change to an event they organised that has other guests, Google notifies those
-guests of the change, and the approval request says so in advance.</p>
+guests of the change, and the approval request says so in advance. Likewise, if the owner
+approves sharing a Drive file with someone, Google emails that person a link to it.</p>
 
 <p>The use and transfer of information received from Google APIs adheres to the
 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services
